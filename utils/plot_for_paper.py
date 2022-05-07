@@ -570,7 +570,6 @@ def plot_midi(args):
 
     audio_path = args.audio_path
     midi_path = args.midi_path
-    fig_path = 'results/{}.png'.format(get_filename(audio_path))
     pianoRoll= '/content/drive/My Drive/Transcription-Dataset/metadata/pianoRoll/{}.png'.format(get_filename(audio_path))
 
     (audio, _) = librosa.core.load(audio_path, sr=config.sample_rate, mono=True)
@@ -609,11 +608,8 @@ def plot_midi(args):
     axs[2].set_xlabel('Seconds')
     plt.tight_layout(0, 0, 0)
     plt.savefig(pianoRoll)
-    print("here")
-    print('Save out to {}'.format(pianoRoll))
-    print("here2")
-    print('piano rolls ',target_dict['frame_roll'])
-    print("here3")
+    print('piano rolls ',target_dict['frame_roll'],'  shape ',target_dict['frame_roll'].shape)
+    
     
 
 
