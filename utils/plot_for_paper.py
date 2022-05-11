@@ -586,7 +586,7 @@ def plot_midi(args):
         midi_events_time=midi_dict['midi_event_time'], 
         midi_events=midi_dict['midi_event'])
     
-    fig, axs = plt.subplots(3, 1, figsize=(10, 4), sharex=True)
+    fig, axs = plt.subplots(3, 1, figsize=(20, 10), sharex=True)
     logmel = np.log(librosa.feature.melspectrogram(audio, sr=16000, n_fft=2048, hop_length=160, n_mels=229, fmin=30, fmax=8000)).T
     axs[0].matshow(logmel.T, origin='lower', aspect='auto', cmap='jet')
     axs[1].matshow(target_dict['frame_roll'].T, origin='lower', aspect='auto', cmap='jet', vmin=-1, vmax=1)
